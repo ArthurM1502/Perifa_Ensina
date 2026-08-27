@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='static_css/styles.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sedgwick+Ave+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sedgwick+Ave+Display&display=swap"
+      rel="stylesheet"
+    />
+    <title>PerifaEnsina</title>
+  </head>
+  <body>
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <script>
+      window.onload = function() {
+        {% for message in messages %}
+          alert("{{ message|escape }}");
+        {% endfor %}
+      }
+    </script>
+    {% endif %} {% endwith %}
+    <div class="container">
+      <div class="perifaensina">PerifaEnsina</div>
+      <div class="login">
+        <form method="POST" action="{{ url_for('editar') }}">
+          <h3 id="bemvindo">Bem-vindo ao PerifaEnsina!</h3>
+          <h3>Selecione o tipo de conta:</h3>
+          <div class="radios">
+            <label class="opcoes">
+              <input
+                type="radio"
+                id="professor"
+                name="tipo_conta"
+                value="Professor"
+                required
+                class="radio-custom"
+              />
+              Professor
+            </label>
+            <label class="opcoes">
+              <input
+                type="radio"
+                id="aluno"
+                name="tipo_conta"
+                value="Aluno"
+                class="radio-custom"
+              />
+              Aluno
+            </label>
+          </div>
+          <h3>Edite as informações da sua conta:</h3>
+          <div class="inputs">
+            <label>Nome:</label>
+            <input
+              type="text"
+              name="nome"
+              placeholder="Digite seu Nome"
+              required
+            /><br />
+            <label>Email:</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Digite seu email"
+              required
+            /><br />
+            <label>Senha:</label>
+            <input
+              type="password"
+              name="senha"
+              placeholder="Digite sua senha"
+              required
+            /><br />
+            <div class="submits">
+              <button
+                type="submit"
+                name="acao"
+                value="salvar"
+                class="btn-salvar"
+              >
+                Salvar
+              </button>
+              <button
+                type="submit"
+                name="acao"
+                value="excluir"
+                class="btn-excluir"
+                onclick="return confirm('Tem certeza que deseja excluir sua conta? Esta ação não pode ser desfeita.');"
+              >
+                Excluir Conta
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

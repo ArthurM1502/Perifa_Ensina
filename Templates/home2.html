@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='static_css/styles3.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sedgwick+Ave+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sedgwick+Ave+Display&display=swap"
+      rel="stylesheet"
+    />
+    <script src="{{ url_for('static', filename='static_js/script2.js') }}"></script>
+    <title>PerifaEnsina</title>
+  </head>
+  <body>
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <script>
+      window.onload = function() {
+        {% for message in messages %}
+          alert("{{ message|escape }}");
+        {% endfor %}
+      }
+    </script>
+    {% endif %} {% endwith %}
+    <div class="navegacao">
+      <div class="perifaensina">PerifaEnsina</div>
+      <nav id="barra">
+        <a href="/home2.html">Início</a> | <a href="#conteudo">Conteúdos</a> |
+        <a href="#sobrenos">Sobre nós</a> |
+        <a href="/editar">Editar conta</a>
+      </nav>
+    </div>
+    <h1 id="aprenda">Aprenda sobre metodologias de ensino!</h1>
+    <div class="box1">
+      <div class="imagens">
+        <img
+          src="{{ url_for('static', filename='assent/alunos_gamificando.jpg') }}"
+        />
+        <img
+          src="{{ url_for('static', filename='assent/designthinking.png') }}"
+        />
+        <img
+          src="{{ url_for('static', filename='assent/cadeiras_circulo.jpg') }}"
+        />
+        <img
+          src="{{ url_for('static', filename='assent/alunos_gamificando.jpg') }}"
+        />
+        <img
+          src="{{ url_for('static', filename='assent/designthinking.png') }}"
+        />
+        <img
+          src="{{ url_for('static', filename='assent/cadeiras_circulo.jpg') }}"
+        />
+      </div>
+    </div>
+    <h2 id="aplicar">
+      Entenda o que são essas metodologias e como elas funcionam!
+    </h2>
+    <div class="curiosidades">
+      <div id="metodologias">
+        <h4>
+          As metodologias ativas de aprendizagem oferecem diversas vantagens,
+          como o aumento do engajamento e autonomia dos alunos, o
+          desenvolvimento de habilidades importantes como pensamento crítico e
+          resolução de problemas, além de promover um aprendizado mais
+          significativo e preparando os alunos para o futuro.
+        </h4>
+      </div>
+      <ul>
+        <label>Desenvolvimento de habilidades</label>
+        <li>
+          O aprendizado ativo estimula o desenvolvimento de habilidades como
+          pensamento crítico, resolução de problemas, comunicação, colaboração e
+          criatividade, essenciais para a vida pessoal e profissional.
+        </li>
+        <br />
+        <label>Aprendizagem mais significativa</label>
+        <li>
+          Ao participarem ativamente do processo de aprendizagem, os alunos
+          assimilam o conteúdo de forma mais profunda e duradoura, construindo
+          um conhecimento mais significativo e aplicável à realidade.
+        </li>
+        <br />
+        <label>Preparo para o futuro</label>
+        <li>
+          As metodologias ativas preparam os alunos para os desafios do mercado
+          de trabalho, incentivando a adaptação a novas situações, a busca por
+          soluções e o trabalho em equipe, habilidades valorizadas em diversos
+          contextos profissionais.
+        </li>
+      </ul>
+    </div>
+    <div class="container" id="conteudo">
+      <h2 id="ola">
+        Olá, {{nome}}! Vamos entender sobre as metodologias aplicadas em sala?
+      </h2>
+      <div class="metodos" style="display: flex; flex-wrap: wrap; gap: 20px">
+        <div class="m">
+          <h2>O que são metodologias ativas e atuais?</h2>
+          <button class="botaoMostrarMais">Mostrar Mais</button>
+          <p class="conteudoOculto" style="display: none">
+            As metodologias ativas de aprendizagem são uma técnica pedagógica
+            que se baseia em atividades instrucionais, capazes de engajar os
+            estudantes em, de fato, se tornarem protagonistas no processo de
+            construção do próprio conhecimento. Ou seja, são metodologias menos
+            baseadas na transmissão de informações e mais no desenvolvimento de
+            habilidades. O termo foi cunhado pelos professores Charles Bonwell e
+            James Eison em seu livro “Active Learning: Creating Excitement in
+            the Classroom“, lançado em 1991. Com as metodologias ativas de
+            aprendizagem, o ensino é feito por meio de práticas que trabalham
+            com diferentes conceitos de maneira repetida — de várias maneiras e
+            com feedback imediato.<br />
+            <br />
+
+            O intuito é que o conhecimento possa realmente se firmar nas mentes
+            dos estudantes. Nos modelos convencionais, as aulas expositivas
+            colocam o professor como o centro do ensino, passando o conteúdo
+            enquanto os alunos absorvem tudo de maneira passiva.<br />
+            <br />
+            Dessa forma, a aprendizagem ativa dá um salto na relação entre
+            professores e alunos, que, neste formato, são estimulados a tomarem
+            a frente, com maior interação e independência, participando
+            ativamente do processo.<br />
+
+            O professor se torna mais um mediador, orientando e conduzindo os
+            alunos na solução de problemas, na elaboração de ideias e
+            argumentos, no trabalho em equipe e em outras competências muito
+            importantes, como responsabilidade, independência, proatividade,
+            ética etc.
+          </p>
+        </div>
+        <div class="m">
+          <h2>Design Thinking</h2>
+          <button class="botaoMostrarMais">Mostrar Mais</button>
+          <p class="conteudoOculto" style="display: none">
+            O design thinking, como o nome dá a entender, é o pensamento voltado
+            para o design. É muito comum em empresas inovadoras e já começa a
+            dar as caras em instituições de ensino. O foco do design thinking
+            são as pessoas, e o objetivo é inovar para criar uma solução
+            criativa e eficiente para um problema. Trata-se de uma metodologia
+            ativa de aprendizagem, pois coloca os envolvidos no centro do
+            problema — e os obriga a “erguer as mangas” para encontrar
+            soluções.<br />
+            <br />
+            E antes que você pense que o design thinking tem a ver apenas com
+            design de produtos, saiba que não é bem assim. Na verdade, é uma
+            metodologia que visa olhar para os problemas de novas maneiras,
+            utilizando da lógica, imaginação e intuição, bem como materialização
+            da solução por meio da prototipagem e testagem.
+          </p>
+        </div>
+        <div class="m">
+          <h2>Gamificação</h2>
+          <button class="botaoMostrarMais">Mostrar Mais</button>
+          <p class="conteudoOculto" style="display: none">
+            A gamificação na educação é um dos principais métodos de
+            aprendizagem ativa utilizados hoje, tanto na educação acadêmica
+            quanto na gestão da aprendizagem corporativa. Trata-se,
+            essencialmente, de trazer elementos comuns a videogames (como
+            desafios, regras, narrativas e storytelling em geral) para o
+            ensino.<br />
+            <br />
+            Desse modo, é possível expor os alunos a problemas baseados em
+            diferentes situações, disponibilizando recursos diferenciados para
+            que possam resolvê-los — seja individualmente ou em grupo. É uma
+            prática que estimula o ensino lúdico e o pensamento analítico,
+            desenvolvendo habilidades antes inéditas na sala de aula.
+          </p>
+        </div>
+        <div class="m">
+          <h2>Sala de Aula Invertida</h2>
+          <button class="botaoMostrarMais">Mostrar Mais</button>
+          <p class="conteudoOculto" style="display: none">
+            A sala de aula invertida é uma das metodologias ativas de
+            aprendizagem que contam com o auxílio da tecnologia, transformando
+            qualquer ambiente em um espaço dedicado ao estudo. Seja em casa, na
+            rua, ou nos meios de transporte, por exemplo, é possível acessar o
+            conteúdo previamente, disponibilizado nas plataformas de ensino.<br />
+            <br />
+            Dessa forma, o tempo da aula pode ser usado para discussões e
+            debates sobre o tema, em vez de somente a transmissão do conteúdo. O
+            professor pode, inclusive, complementar com vídeos, demonstrações
+            visuais e práticas.
+          </p>
+        </div>
+        <div class="m">
+          <h2>Estudo de Casos</h2>
+          <button class="botaoMostrarMais">Mostrar Mais</button>
+          <p class="conteudoOculto" style="display: none">
+            Com estudos de casos, os estudantes são expostos a problemas reais,
+            de modo que possam analisá-los por inteiro (como uma situação real)
+            e, entre si, discutir as possibilidades de solucioná-los. Esses
+            casos são relatos construídos de tal modo a estimular o pensamento
+            analítico e sistêmico.<br />
+            <br />
+            São como exercícios em uma prova, mas mais contextualizados e
+            abrangentes.
+          </p>
+        </div>
+        <div class="m">
+          <h2>Seminários e Debates</h2>
+          <button class="botaoMostrarMais">Mostrar Mais</button>
+          <p class="conteudoOculto" style="display: none">
+            Outro tipo de metodologia ativa de aprendizagem é a promoção de
+            seminários e discussões entre os alunos. Muitas vezes, para isso,
+            apenas deve-se mudar a disposição das carteiras para que todos os
+            alunos e o professor estejam em posição de igualdade (em um círculo,
+            por exemplo).<br />
+            <br />
+            Normalmente, a aplicação prática é simples, com o professor propondo
+            um tema para discussão geral, de modo que os alunos devem se
+            posicionar em relação a ele. É uma forma de, inclusive, desenvolver
+            o potencial argumentativo, expondo-os a diferentes pontos de vista e
+            colocando-os em situações fora de sua zona de conforto intelectual.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <div id="sobrenos">
+      <h2>Quem somos?</h2>
+      <p>
+        Somos estudantes do "Programando o Futuro", bootcamp de programação
+        fullstack realizado pela parceria entre a César School e a EMBRAER.
+      </p>
+      <h2 id="contato">Contato:</h2>
+      <ul>
+        <li>(81)XXXXX-XXXX</li>
+        <li>perifaensina@gmail.com</li>
+      </ul>
+      <br />
+    </div>
+    <footer>
+      <div class="direitos">
+        <p>© PerifaEnsina 2025. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='static_css/styles2.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sedgwick+Ave+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sedgwick+Ave+Display&display=swap"
+      rel="stylesheet"
+    />
+    <script src="{{ url_for('static', filename='static_js/script.js') }}"></script>
+    <title>PerifaEnsina</title>
+  </head>
+  <body>
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <script>
+      window.onload = function() {
+        var msgs = {{ messages|tojson|safe }};
+        msgs.forEach(function(msg) { alert(msg); });
+      };
+    </script>
+    {% endif %} {% endwith %}
+    <div class="navegacao">
+      <div class="perifaensina">PerifaEnsina</div>
+      <nav id="barra">
+        <a href="/home1.html">Início</a> | <a href="#conteudo">Conteúdos</a> |
+        <a href="#sobrenos">Sobre nós</a> |
+        <a href="/editar">Editar conta</a>
+      </nav>
+    </div>
+    <h1 id="aprenda">Aprenda sobre metodologias de ensino!</h1>
+    <div class="box1">
+      <div class="imagens">
+        <img
+          src="{{ url_for('static', filename='assent/alunos_gamificando.jpg') }}"
+        />
+        <img
+          src="{{ url_for('static', filename='assent/designthinking.png') }}"
+        />
+        <img
+          src="{{ url_for('static', filename='assent/cadeiras_circulo.jpg') }}"
+        />
+        <img
+          src="{{ url_for('static', filename='assent/alunos_gamificando.jpg') }}"
+        />
+        <img
+          src="{{ url_for('static', filename='assent/designthinking.png') }}"
+        />
+        <img
+          src="{{ url_for('static', filename='assent/cadeiras_circulo.jpg') }}"
+        />
+      </div>
+    </div>
+    <h2 id="aplicar">
+      Saiba como aplicar essas metodologias de forma eficaz nas salas de aula!
+    </h2>
+    <div class="curiosidades">
+      <div id="metodologias">
+        <h4>
+          As metodologias ativas de aprendizagem oferecem diversas vantagens,
+          como o aumento do engajamento e autonomia dos alunos, o
+          desenvolvimento de habilidades importantes como pensamento crítico e
+          resolução de problemas, além de promover um aprendizado mais
+          significativo e preparando os alunos para o futuro.
+        </h4>
+      </div>
+      <ul>
+        <label>Desenvolvimento de habilidades</label>
+        <li>
+          O aprendizado ativo estimula o desenvolvimento de habilidades como
+          pensamento crítico, resolução de problemas, comunicação, colaboração e
+          criatividade, essenciais para a vida pessoal e profissional.
+        </li>
+        <br />
+        <label>Aprendizagem mais significativa</label>
+        <li>
+          Ao participarem ativamente do processo de aprendizagem, os alunos
+          assimilam o conteúdo de forma mais profunda e duradoura, construindo
+          um conhecimento mais significativo e aplicável à realidade.
+        </li>
+        <br />
+        <label>Preparo para o futuro</label>
+        <li>
+          As metodologias ativas preparam os alunos para os desafios do mercado
+          de trabalho, incentivando a adaptação a novas situações, a busca por
+          soluções e o trabalho em equipe, habilidades valorizadas em diversos
+          contextos profissionais.
+        </li>
+      </ul>
+    </div>
+    <div class="container" id="conteudo">
+      <h2 id="ola">Olá, {{nome}}! vamos começar?</h2>
+      <div class="modulos">
+        <div class="m">
+          <h2>Metodologias Ativas 1.1</h2>
+          <h3>Introdução</h3>
+          <div class="barra-container">
+            <div class="barra-progresso" id="progressbar1">
+              <span class="porcentagem-texto" id="porcentagem1">0%</span>
+            </div>
+          </div>
+          <div class="botoes-modulo">
+            <button>
+              <a href="/introducao">Iniciar módulo</a>
+            </button>
+            <button
+              class="btn-anim"
+              onclick="atualizarBarra('progressbar1', 100, true)"
+            >
+              Finalizar módulo
+            </button>
+          </div>
+        </div>
+
+        <br />
+        <div class="m">
+          <h2>Metodologias Ativas 1.2</h2>
+          <h3>Design Thinking</h3>
+          <div class="barra-container2">
+            <div class="barra-progresso2" id="progressbar2">
+              <span class="porcentagem-texto" id="porcentagem2">0%</span>
+            </div>
+          </div>
+
+          <div class="botoes-modulo">
+            <button>
+              <a href="/designthinking">Iniciar módulo</a>
+            </button>
+            <button
+              class="btn-anim"
+              onclick="atualizarBarra('progressbar2', 100, true)"
+            >
+              Finalizar módulo
+            </button>
+          </div>
+        </div>
+        <br />
+        <div class="m">
+          <h2>Metodologias Ativas 1.3</h2>
+          <h3>Gamificação</h3>
+          <div class="barra-container3">
+            <div class="barra-progresso3" id="progressbar3">
+              <span class="porcentagem-texto" id="porcentagem3">0%</span>
+            </div>
+          </div>
+
+          <div class="botoes-modulo">
+            <button>
+              <a href="/gamificacao">Iniciar módulo</a>
+            </button>
+            <button
+              class="btn-anim"
+              onclick="atualizarBarra('progressbar3', 100, true)"
+            >
+              Finalizar módulo
+            </button>
+          </div>
+        </div>
+        <br />
+
+        <div class="m">
+          <h2>Metodologias Ativas 1.4</h2>
+          <h3>Sala de Aula Invertida</h3>
+          <div class="barra-container4">
+            <div class="barra-progresso4" id="progressbar4">
+              <span class="porcentagem-texto" id="porcentagem4">0%</span>
+            </div>
+          </div>
+
+          <div class="botoes-modulo">
+            <button>
+              <a href="/sala_de_aula_invertida">Iniciar módulo</a>
+            </button>
+            <button
+              class="btn-anim"
+              onclick="atualizarBarra('progressbar4', 100, true)"
+            >
+              Finalizar módulo
+            </button>
+          </div>
+        </div>
+
+        <br />
+        <div class="m">
+          <h2>Metodologias Ativas 1.5</h2>
+          <h3>Estudo de Casos</h3>
+          <div class="barra-container5">
+            <div class="barra-progresso5" id="progressbar5">
+              <span class="porcentagem-texto" id="porcentagem5">0%</span>
+            </div>
+          </div>
+
+          <div class="botoes-modulo">
+            <button>
+              <a href="/estudo_de_casos">Iniciar módulo</a>
+            </button>
+            <button
+              class="btn-anim"
+              onclick="atualizarBarra('progressbar5', 100, true)"
+            >
+              Finalizar módulo
+            </button>
+          </div>
+        </div>
+        <br />
+
+        <div class="m">
+          <h2>Metodologias Ativas 1.6</h2>
+          <h3>Seminários e Debates</h3>
+          <div class="barra-container3">
+            <div class="barra-progresso6" id="progressbar6">
+              <span class="porcentagem-texto" id="porcentagem6">0%</span>
+            </div>
+          </div>
+
+          <div class="botoes-modulo">
+            <button>
+              <a href="/seminarios_debates">Iniciar módulo</a>
+            </button>
+            <button
+              class="btn-anim"
+              onclick="atualizarBarra('progressbar6', 100, true)"
+            >
+              Finalizar módulo
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div id="sobrenos">
+      <h2>Quem somos?</h2>
+      <p>
+        Somos estudantes do "Programando o Futuro", bootcamp de programação
+        fullstack realizado pela parceria entre a César School e a EMBRAER.
+      </p>
+      <h2 id="contato">Contato:</h2>
+      <ul>
+        <li>(81)XXXXX-XXXX</li>
+        <li>perifaensina@gmail.com</li>
+      </ul>
+
+      <br />
+    </div>
+    <footer>
+      <div class="direitos">
+        <p>© PerifaEnsina 2025. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+  </body>
+</html>

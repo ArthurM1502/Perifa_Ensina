@@ -1,0 +1,64 @@
+# Banco de dados local (dados sensíveis de usuários, não deve ir pro GitHub)
+instance/
+
+# Ambiente virtual Python
+venv/
+.venv/
+env/
+
+# Cache de execução do Python
+__pycache__/
+*.pyc
+
+# Variáveis de ambiente (quando você migrar a secret_key pra cá)
+.env
+
+# Arquivos de editor/IDE
+.vscode/
+.idea/
+
+# Arquivos de sistema operacional
+.DS_Store
+Thumbs.db
+ 
+# Arquivos de banco e caches locais
+# Ignora banco sqlite e variações locais
+site.db
+*.sqlite
+*.db
+
+# Pasta de build / packaging
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# Testes e cobertura
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Caches de ferramentas Python
+.mypy_cache/
+.cache/
+
+# Outros artefatos e caches
+.eggs/
+*.pyo
+*$py.class
+
+# Editor temporários / backups
+*.swp
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Ignorar arquivos sensíveis dentro de instance
+instance/*.db
+instance/*.sqlite
+
+# Ignorar variações de arquivos de ambiente
+.env*
+!.env.example

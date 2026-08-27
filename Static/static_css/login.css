@@ -1,0 +1,172 @@
+body {
+  background-image: url("../assent/imagem_favela.jpg");
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  color: #13222c;
+}
+
+.container {
+  color: #13222c;
+  background-color: #f1f1f1;
+  font-family: montserrat;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 20px;
+  padding: 30px 60px;
+  width: 500px;
+}
+
+#bemvindo {
+  margin: 0;
+  text-align: center;
+  font-weight: bolder;
+  color: #d84b52;
+  font-size: 24px;
+  text-align: left;
+}
+
+.perifaensina {
+  font-family: Sedgwick Ave Display;
+  font-size: 75px;
+  text-align: center;
+}
+
+.radios {
+  accent-color: #d84b52;
+}
+
+.radios :hover span {
+  border-color: #d84b52;
+}
+
+.opcoes {
+  box-sizing: border-box;
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+.opcoes + .opcoes {
+  margin-top: 1em;
+}
+
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #d33;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+input[type="radio"]:checked::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  background-color: #d33;
+  border-radius: 50%;
+}
+
+input[type="radio"]:hover {
+  transform: scale(1.1);
+  border-color: #a00;
+}
+
+input[type="text"],
+input[type="submit"],
+input[type="password"],
+input[type="email"] {
+  all: unset;
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  transition: border 0.3s ease-in-out;
+  margin-right: 20px;
+  margin-left: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  font-family: montserrat;
+  font-size: 1rem;
+}
+
+input[type="submit"] {
+  float: left;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+input:focus {
+  border-color: #d84b52;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 5px;
+}
+
+.inputs label {
+  font-weight: bold;
+  text-align: left;
+}
+
+.inputs input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.submits {
+  width: 75%;
+  display: flex;
+  text-align: center;
+  margin-top: 1.8%;
+  margin-bottom: 5%;
+  margin-left: 14%;
+}
+
+.submits input:hover {
+  background-color: #d84b52;
+  transition: 0.3s ease-in-out;
+  transform: scale(1.05);
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 20px;
+    font-size: medium;
+  }
+
+  .perifaensina {
+    font-size: 40px;
+  }
+
+  #bemvindo {
+    font-size: 20px;
+  }
+
+  .submits {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
